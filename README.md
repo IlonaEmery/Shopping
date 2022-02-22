@@ -19,8 +19,10 @@ conda create -n shopping-env python=3.8 # (first time only)
 conda activate shopping-env
 ```
 
-Download the required packages (first time only):
+## Running
+
+Run the code by inputting the following in the command line:
 
 ```sh
-pip install -r requirements.txt
+python Shopping_cart.py
 ```
