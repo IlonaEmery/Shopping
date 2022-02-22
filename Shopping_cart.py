@@ -1,4 +1,5 @@
 # shopping_cart.py
+from datetime import datetime
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -37,35 +38,56 @@ def to_usd(my_price):
     return f"${my_price:,.2f}" #> $12,000.71
 
 # TODO: write some Python code here to produce the desired output
-
-print(products)
+print("Bienvenue to Maman Ilo's Groceries!")
+#print(products)
+matching_products = []
 while True:
 #ASK FOR USER INPUT
 
-product_id = input("Please input a product identifier:")
-print(product_id)
-print(type(product_id))
-if product_id == "DONE"
-break
+    product_id = input("Please input a product identifier: ")
+    #print(product_id)
+    #print(type(product_id))
+    if product_id == "DONE":
+        break
+    
+    for x in products:
+
+    #if x = 3
+    # ___.append(x)
+    # print(x["id"])
+        if str(x["id"]) == str(product_id):
+        #this is a match
+            matching_products.append(x)
 
 #LOOK UP CORRESPONDING PRODUCTS
 
 # print the product that has an ID attribute equal to "9"
 
-matching_products = []
-
-for x in products:
-
-    #if x = 3
-    # ___.append(x)
-    # print(x["id"])
-    if str(x["id"] == str(product_id):
-        #this is a match
-        matching_products.append(x)
-print(matching_products)
-print(type(matching_products)))
-print(len(matching_products))
+#print(matching_products)
+#print(type(matching_products))
+#print(len(matching_products))
 
 #print the name of the matching product
-matching_product = matching_products[0]
-print(matching_product["name"], matching_product["price"])
+#matching_product = matching_products[0]
+#print(matching_product["name"], matching_product["price"])
+totalpretax = 0
+print()
+print("Maman Ilo's Groceries")
+print("+1(202)111-2233")
+x = datetime.now()
+print(x.strftime("%Y-%m-%d %H:%M%p"))
+print()
+print("My Shopping Cart:")
+for x in matching_products:
+    print(x["name"],"("+to_usd(x["price"])+")")
+    totalpretax += x["price"]
+
+print()
+print("Your Total (before tax):",to_usd(totalpretax))
+tax = totalpretax * (0.0875)
+total = tax + totalpretax
+print("Tax:", to_usd(tax))
+print()
+print("Grand Total:", to_usd(total))
+print()
+print("Merci, come again soon!")
